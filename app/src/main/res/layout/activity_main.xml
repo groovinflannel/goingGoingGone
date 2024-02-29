@@ -31,7 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:padding="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -40,6 +41,40 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:text="@string/welcome"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please enter your name"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:padding="10dp"
+                ></TextView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/name"
+                    android:hint="@string/name"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:layout_marginTop="5dp"
+                android:id="@+id/button_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="start"
+            />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

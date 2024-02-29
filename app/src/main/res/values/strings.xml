@@ -2,4 +2,5 @@
     <string name="app_name">GoingGoingGoneQuizApp</string>
     <string name="going_going_gone_a_travel_quiz_app">Going, Going, Gone! A Travel Quiz App</string>
     <string name="welcome">Welcome</string>
+    <string name="name">Name</string>
 </resources>
