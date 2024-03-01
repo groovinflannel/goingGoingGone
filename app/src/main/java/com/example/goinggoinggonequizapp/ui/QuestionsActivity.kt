@@ -27,7 +27,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     private val currentQuestion = 1
     private lateinit var questionsList: MutableList<Question>
-    private val selectedOptionPosition = 0
+    private var selectedOptionPosition = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
@@ -40,6 +40,11 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         textViewOption4 = findViewById(R.id.text_view_option_4)
         checkButton = findViewById(R.id.check_answer_button)
 
+        textViewOption1.setOnClickListener(this)
+        textViewOption2.setOnClickListener(this)
+        textViewOption3.setOnClickListener(this)
+        textViewOption4.setOnClickListener(this)
+        checkButton.setOnClickListener(this)
 
         questionsList = Constants.getQuestions()
         Log.d("QuestionsListSize", "${questionsList.size}")
@@ -80,9 +85,33 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    private fun chosenAnswer(textView: TextView, chosenAnswerNumber: Int) {
+        resetAnswers()
+        selectedOptionPosition = chosenAnswerNumber
+        textView.setTextColor(Color.parseColor("#FFFFFF"))
+        textView.background = ContextCompat.getDrawable(
+            this,
+            R.drawable.selected_option_border_bg
+        )
+    }
+
     override fun onClick(view: View?) {
         when (view?.id) {
+            R.id.text_view_option_1 -> {
+                chosenAnswer(textViewOption1, 1)
+            }
+            R.id.text_view_option_2 -> {
+                chosenAnswer(textViewOption2, 2)
+            }
+            R.id.text_view_option_3 -> {
+                chosenAnswer(textViewOption3, 3)
+            }
+            R.id.text_view_option_4 -> {
+                chosenAnswer(textViewOption4, 4)
+            }
+            R.id.check_answer_button -> {
 
+            }
         }
     }
 }
