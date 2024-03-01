@@ -27,7 +27,8 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     private val currentQuestion = 1
     private lateinit var questionsList: MutableList<Question>
-    private var selectedOptionPosition = 0
+    private var questionCounter = 0
+    private var selectedAnswer = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
@@ -87,7 +88,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun chosenAnswer(textView: TextView, chosenAnswerNumber: Int) {
         resetAnswers()
-        selectedOptionPosition = chosenAnswerNumber
+        questionCounter = chosenAnswerNumber
         textView.setTextColor(Color.parseColor("#FFFFFF"))
         textView.background = ContextCompat.getDrawable(
             this,
